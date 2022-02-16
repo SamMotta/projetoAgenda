@@ -1,0 +1,23 @@
+<% Controle de fluxo (if, for...) %>
+<%= Imprime como um .textContent %>
+<%- Imprime como um innerHTML %>
+<%- Include('CAMINHO/ARQUIVO') %>
+<%# Cometário %> => Se tiver algum outro sinal o # vem antes
+
+Funciona tanto assim: 
+res.render('index', {
+        title: '<span style="color: blue">Wendel</span> morre em tiroteio',
+        numbers: [ 0, 1, 2, 3, 4, 5 ]
+})
+
+Quanto assim:
+res.locals.umaVariavel = 'IrrAAA'
+
+
+<h1>
+<% if(adulto) { %>
+    <%- adulto %>
+<% } else { %>
+    <%= Não é adulto%>
+<% } %>
+</h1>

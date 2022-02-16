@@ -1,0 +1,52 @@
+<%- include('./includes/head') %>
+<%- include('./includes/nav') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+
+    <div class="col-lg-8 my-3">
+      <h1 class="text-center">Contato</h1>
+      <p class="text-center lead">Crie ou edite seu contato abaixo</p>
+
+        <%- include('./includes/messages') %>
+        
+        <% if(contato._id) { %>
+          <form action="/contato/edit/<%= contato._id %>" method="post">
+          <% } else {%>
+            <form action="/contato/register" method="post">
+        <% } %>
+        
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <div class="form-group my-2">
+            <label for="exampleInputEmail1">Nome</label>
+            <input type="text" name="name" value="<%= contato.name %>" class="form-control" aria-describedby="nameHelp" placeholder="Entre com o nome">
+          </div>
+
+          <div class="form-group my-2">
+            <label for="exampleInputEmail1">Sobrenome</label>
+            <input type="text" name="surname" value="<%= contato.surname %>" class="form-control" aria-describedby="surnameHelp" placeholder="Entre com o sobrenome">
+          </div>
+
+          <div class="form-group my-2">
+              <label for="exampleInputEmail1">Endereço de email</label>
+              <input type="email" name="email" value="<%= contato.email %>" class="form-control" aria-describedby="emailHelp" placeholder="Entre com email">
+              <small class="form-text text-muted">Jamais iremos compartilhar seu email com alguém.</small>
+          </div>
+
+          <div class="form-group my-2">
+            <label for="exampleInputEmail1">Número de telefone</label>
+            <input type="tel" name="phoneNumber" value="<%= contato.phoneNumber %>" class="form-control" aria-describedby="telephoneNumberHelp" placeholder="Entre com o número de telefone">
+        </div>
+          
+          <button type="submit" class="btn btn-primary my-1">Enviar</button>
+      </form>
+  
+
+    </div>
+
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+
+<%- include('./includes/footer') %>
