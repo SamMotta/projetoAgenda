@@ -1,8 +1,8 @@
-# projetoAgenda
-Um projeto de CRUD simples (agenda de contatos) utilizando o banco de dados MongoDB e a linguagem JavaScript.
+# projeto Agenda
+Um projeto de CRUD simples (agenda de contatos) utilizando MongoDB e JavaScript.
 
 ## Configuração do Projeto:
-- Criar um cluster no MongoDB e criar um usuário e senha para a conexão
+- Crie um cluster no MongoDB e crie um usuário e senha para a conexão
 - Trocar process.env.CONNECTIONSTRING no server.js pela string de conexão.
 
 Exemplo:
